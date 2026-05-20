@@ -1,8 +1,8 @@
-import javax.swing.*;
+import javax.swing.JOptionPane;
 
 public class Metodos {
 
-    public void adicionarConsole(){
+    public void adicionarConsole(PilhaConsoles pilhaConsoles){
         String nomeConsole = "";
 
         do {
@@ -43,11 +43,6 @@ public class Metodos {
                     continue;
                 }
 
-                if (anoConsoleInt == 0) {
-                    JOptionPane.showMessageDialog(null, "Zero? Tem certeza...?","Adicionar console", JOptionPane.PLAIN_MESSAGE);
-                    continue;
-                }
-
                 anoConsoleInt = Integer.parseInt(anoConsole);
 
             } catch (NumberFormatException e){
@@ -62,17 +57,12 @@ public class Metodos {
 
         do {
             try {
-            geracaoConsole = JOptionPane.showInputDialog(null,"Insira a geração do console:\n(Apenas um número, ex: 3)1","Adicionar console",JOptionPane.PLAIN_MESSAGE);
+            geracaoConsole = JOptionPane.showInputDialog(null,"Insira a geração do console:\n(Apenas um número, ex: 3)","Adicionar console",JOptionPane.PLAIN_MESSAGE);
 
             if (geracaoConsole == null) { return; }
 
             if (geracaoConsole.isBlank()){
                 JOptionPane.showMessageDialog(null,"A geração não pode ficar vazia!","Adicionar console",JOptionPane.INFORMATION_MESSAGE);
-                continue;
-            }
-
-            if (anoConsoleInt == 0) {
-                JOptionPane.showMessageDialog(null, "Zero? Tem certeza...?","Adicionar console", JOptionPane.PLAIN_MESSAGE);
                 continue;
             }
 
@@ -86,6 +76,9 @@ public class Metodos {
 
         Console console = new Console(nomeConsole, nomeFabricante, anoConsoleInt, geracaoConsoleInt);
 
+        pilhaConsoles.pilhaPush(console);
+
+        JOptionPane.showMessageDialog(null,"Console adicionado com sucesso!\n\n" + console.toString(), "Adicionar console",JOptionPane.PLAIN_MESSAGE);
 
     }
 
