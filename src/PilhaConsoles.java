@@ -5,6 +5,10 @@ public class PilhaConsoles {
     private Console[] pilhaDeConsoles = new Console[5];
     private int topoDosConsoles = 0;
 
+    public int getTopoDosConsoles() {
+        return topoDosConsoles;
+    }
+
     public void pilhaPush(Console newConsole){
         pilhaDeConsoles[topoDosConsoles] = newConsole;
         topoDosConsoles++;
@@ -34,18 +38,29 @@ public class PilhaConsoles {
 //        pilhaDeConsoles[topoDosConsoles] = null;
 //    }
 
-    public void pilhaListar (){
+    public void pilhaListar(){
 
         if (topoDosConsoles == 0){
             JOptionPane.showMessageDialog(null, "Não há nenhum console adicionado.", "Listar consoles", JOptionPane.INFORMATION_MESSAGE);
             return;
         }
 
-        for (int i = topoDosConsoles - 1 ; i >= 0; i--){
+        for (int i = topoDosConsoles-1; i >= 0; i--){
 
             Console console = pilhaDeConsoles[i];
-            JOptionPane.showMessageDialog(null,console.toString(),"Listar consoles",JOptionPane.PLAIN_MESSAGE);
+            JOptionPane.showMessageDialog(null,console.toString(),"Listar consoles", JOptionPane.PLAIN_MESSAGE);
         }
     }
 
+    public void pilhaBuscar(String string){
+
+        for (int i = 0; i < topoDosConsoles; i++){
+
+            Console console = pilhaDeConsoles[i];
+
+            if (string.equalsIgnoreCase(console.getNome())){
+                JOptionPane.showMessageDialog(null, console.toString(), "Buscar console", JOptionPane.PLAIN_MESSAGE);
+            }
+        }
+    }
 }
