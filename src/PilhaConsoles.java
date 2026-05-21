@@ -1,4 +1,4 @@
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 public class PilhaConsoles {
 
@@ -9,8 +9,8 @@ public class PilhaConsoles {
         return topoDosConsoles;
     }
 
-    public void pilhaPush(Console newConsole){
-        pilhaDeConsoles[topoDosConsoles] = newConsole;
+    public void pilhaPush(Console console){
+        pilhaDeConsoles[topoDosConsoles] = console;
         topoDosConsoles++;
 
         if (pilhaDeConsoles.length == topoDosConsoles){
@@ -24,43 +24,34 @@ public class PilhaConsoles {
         }
     }
 
-//    public void pilhaPop(){
+    public void pilhaPop(){
+
+
+        pilhaDeConsoles[topoDosConsoles-1] = null;
+    }
+
+    /// RETIRAR QUAISQUER RESQUICIOS DO JOPTIONPANE, ESSE AQUI NAO ESTA FUNCIONANDO DIREITO; TALVEZ UM FOR NO METODOS DE CERTO
+//    public String pilhaListar(){
+//        String consolesRetorno = "";
 //
-//        if (topoDosConsoles == 0) {
-//            JOptionPane.showMessageDialog(null, "Não há nenhum console adicionado.", "Remover console", JOptionPane.INFORMATION_MESSAGE);
-//            return;
+//        for (int i = topoDosConsoles-1; i >= 0; i--){
+//
+//            Console console = pilhaDeConsoles[i];
+//            consolesRetorno += console.toString();
 //        }
-//
-//        topoDosConsoles--;
-//
-//        Console console = pilhaDeConsoles[topoDosConsoles];
-//
-//        pilhaDeConsoles[topoDosConsoles] = null;
+//        return consolesRetorno;
 //    }
 
-    public void pilhaListar(){
-
-        if (topoDosConsoles == 0){
-            JOptionPane.showMessageDialog(null, "Não há nenhum console adicionado.", "Listar consoles", JOptionPane.INFORMATION_MESSAGE);
-            return;
-        }
-
-        for (int i = topoDosConsoles-1; i >= 0; i--){
-
-            Console console = pilhaDeConsoles[i];
-            JOptionPane.showMessageDialog(null,console.toString(),"Listar consoles", JOptionPane.PLAIN_MESSAGE);
-        }
-    }
-
-    public void pilhaBuscar(String string){
-
-        for (int i = 0; i < topoDosConsoles; i++){
-
-            Console console = pilhaDeConsoles[i];
-
-            if (string.equalsIgnoreCase(console.getNome())){
-                JOptionPane.showMessageDialog(null, console.toString(), "Buscar console", JOptionPane.PLAIN_MESSAGE);
-            }
-        }
-    }
+    /// RETIRAR QUAISQUER RESQUICIOS DO JOPTIONPANE
+//    public void pilhaBuscar(String string){
+//
+//        for (int i = 0; i < topoDosConsoles; i++){
+//
+//            Console console = pilhaDeConsoles[i];
+//
+//            if (string.equalsIgnoreCase(console.getNome())){
+//                JOptionPane.showMessageDialog(null, console.toString(), "Buscar console", JOptionPane.PLAIN_MESSAGE);
+//            }
+//        }
+//    }
 }
