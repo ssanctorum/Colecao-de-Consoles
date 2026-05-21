@@ -9,7 +9,13 @@ public class Main {
 
         do {
             try {
-                String primeiroInput = JOptionPane.showInputDialog(null, "Bem-vindo a sua caixa de coleção de consoles!\n\nSelecione a opção desejada:\n\n[1] - Adicionar console\n[2] - Remover console\n[3] - Buscar console\n[4] - Listar consoles\n[5] - Buscar consoles\n\n", "Consoles na Caixa", JOptionPane.PLAIN_MESSAGE);
+                /// nem sabia que JOptionPane suportava formatação html kkkkkkkkk
+                /// ps: nao sei formatar em html rs
+                String primeiroInput = JOptionPane.showInputDialog(null, "<html>Bem-vindo a sua caixa de coleção de consoles!" +
+                        "<p><p>Selecione a opção desejada:" +
+                        "<p><p>[1] - Adicionar console<p>[2] - Remover console<p>[3] - Buscar console<p>[4] - Listar consoles<p>[5] - Contar consoles" +
+                        "<p><p><i>Tenha em vista que é uma caixa, imagine-a.</i>" +
+                        "<p><i>Você não pode <b>empilhar</b> consoles</i><p/><i>dentro de uma caixa sem uma ordem.</i></html>", "Consoles na Caixa", JOptionPane.PLAIN_MESSAGE);
 
                 if (primeiroInput == null){
                     return;
@@ -33,7 +39,7 @@ public class Main {
                         break;
 
                     case 3:
-                        System.out.println("case3");
+                        metodos.buscarConsole(pilhaConsoles);
                         break;
 
                     case 4:
