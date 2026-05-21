@@ -82,36 +82,66 @@ public class Metodos {
 
     }
 
-    public void removerConsole(){
+    /// AJEITAR ESSE
+//    public void removerConsole(PilhaConsoles pilhaConsoles){
+//
+//        if (pilhaConsoles.getTopoDosConsoles() == 0){
+//            JOptionPane.showMessageDialog(null, "Não há nenhum console na caixa.", "Remover console", JOptionPane.INFORMATION_MESSAGE);
+//            return;
+//        }
+//
+//        pilhaConsoles.pilhaPop();
+//    }
 
-    }
+    /// AJEITAR ESSE
+//    public void buscarConsole(PilhaConsoles pilhaConsoles){
+//
+//        if (pilhaConsoles.getTopoDosConsoles() == 0){
+//            JOptionPane.showMessageDialog(null,"Não há nenhum console na caixa.", "Buscar console", JOptionPane.INFORMATION_MESSAGE);
+//            return;
+//        }
+//
+//        String consoleABuscar = JOptionPane.showInputDialog(null,"Insira exatamente nome do console a ser pesquisado:","Buscar console",JOptionPane.PLAIN_MESSAGE);
+//
+//        if (consoleABuscar == null){
+//            return;
+//        }
+//
+//        if (consoleABuscar.isBlank()){
+//            JOptionPane.showMessageDialog(null,"Você não digitou nada!", "Buscar console", JOptionPane.INFORMATION_MESSAGE);
+//            return;
+//        }
+//
+//        pilhaConsoles.pilhaBuscar(consoleABuscar.trim());
+//    }
 
-    public void buscarConsole(PilhaConsoles pilhaConsoles){
+    /// AJEITAR ESSE
+//    public void listarConsoles(PilhaConsoles pilhaConsoles){
+//
+//        if (pilhaConsoles.getTopoDosConsoles() == 0){
+//            JOptionPane.showMessageDialog(null, "Não há nenhum console na caixa.", "Listar consoles", JOptionPane.INFORMATION_MESSAGE);
+//            return;
+//        }
+//
+//        String listaRetorno = pilhaConsoles.pilhaListar();
+//
+//        JOptionPane.showMessageDialog(null,listaRetorno,"Listar consoles", JOptionPane.PLAIN_MESSAGE);
+//
+//    }
+
+    public void contarConsoles(PilhaConsoles pilhaConsoles){
 
         if (pilhaConsoles.getTopoDosConsoles() == 0){
-            JOptionPane.showMessageDialog(null,"Não há nenhum console adicionado.", "Buscar console", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Não há nenhum console na caixa.", "Contar consoles",JOptionPane.INFORMATION_MESSAGE);
             return;
         }
 
-        String consoleABuscar = JOptionPane.showInputDialog(null,"Insira exatamente nome do console a ser pesquisado:","Buscar console",JOptionPane.PLAIN_MESSAGE);
-
-        if (consoleABuscar == null){
+        if (pilhaConsoles.getTopoDosConsoles() == 1){
+            JOptionPane.showMessageDialog(null,"No momento há "+ pilhaConsoles.getTopoDosConsoles() + " console empilhado na caixa.","Contar consoles", JOptionPane.PLAIN_MESSAGE);
             return;
         }
 
-        if (consoleABuscar.isBlank()){
-            JOptionPane.showMessageDialog(null,"Você não digitou nada!", "Buscar console", JOptionPane.INFORMATION_MESSAGE);
-            return;
-        }
-
-        pilhaConsoles.pilhaBuscar(consoleABuscar.trim());
-    }
-
-    public void listarConsoles(PilhaConsoles pilhaConsoles){
-        pilhaConsoles.pilhaListar();
-    }
-
-    public void contarConsoles(){
+        JOptionPane.showMessageDialog(null,"No momento há "+ pilhaConsoles.getTopoDosConsoles() + " consoles empilhados na caixa.", "Contar consoles", JOptionPane.PLAIN_MESSAGE);
 
     }
 }
