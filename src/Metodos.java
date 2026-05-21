@@ -86,8 +86,25 @@ public class Metodos {
 
     }
 
-    public void buscarConsole(){
+    public void buscarConsole(PilhaConsoles pilhaConsoles){
 
+        if (pilhaConsoles.getTopoDosConsoles() == 0){
+            JOptionPane.showMessageDialog(null,"Não há nenhum console adicionado.", "Buscar console", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+
+        String consoleABuscar = JOptionPane.showInputDialog(null,"Insira exatamente nome do console a ser pesquisado:","Buscar console",JOptionPane.PLAIN_MESSAGE);
+
+        if (consoleABuscar == null){
+            return;
+        }
+
+        if (consoleABuscar.isBlank()){
+            JOptionPane.showMessageDialog(null,"Você não digitou nada!", "Buscar console", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+
+        pilhaConsoles.pilhaBuscar(consoleABuscar.trim());
     }
 
     public void listarConsoles(PilhaConsoles pilhaConsoles){
