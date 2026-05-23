@@ -22,16 +22,13 @@ public class PilhaConsoles {
         }
     }
 
-    ///falta apenas tentar retornar o console que foi excluido
-    public void pilhaPop() {
-        Console console = pilhaDeConsoles[topoDosConsoles];
-        String string = "";
+    public String pilhaPop() {
+        Console console = pilhaDeConsoles[topoDosConsoles-1];
 
-//        console.toString() = string;
         pilhaDeConsoles[topoDosConsoles - 1] = null;
         topoDosConsoles--;
 
-
+        return console.toString();
 
 
     }
@@ -46,7 +43,6 @@ public class PilhaConsoles {
         }
         return consolesRetorno;
     }
-
 
     public String pilhaBuscar(String stringBusca) {
 
@@ -63,7 +59,7 @@ public class PilhaConsoles {
         }
 
         if (stringRetorno == ""){
-            return "Nenhum console: " + stringBusca + " encontrado.";
+            return "Nenhum console: '" + stringBusca + "' encontrado.";
         }
 
         return stringRetorno;
